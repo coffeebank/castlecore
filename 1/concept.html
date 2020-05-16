@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="app.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+
+    <!-- css -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- preload -->
+    <link rel="preload" href="http://54.39.95.102:8888/index.html?worldname=CastleCore" as="document">
+    <link rel="preload" href="https://e.widgetbot.io/channels/699929877071003668/702047724903596032" as="document">
+</head>
+<body>
+
+<!-- flexbox, full height parallax background, one column on small screens, two columns on larger screens -->
+<div id="tabs" class="h-screen w-full flex flex-wrap justify-center items-center self-center bg-fixed bg-center bg-cover" style="background-image: url('media/2020-04-21_15.png')">
+    <div class="w-full lg:w-1/2 h-screen lg:h-auto lg:max-h-screen text-center text-gray-800 overflow-y-auto">
+        <div class="pt-16"></div>
+        <p class="text-3xl">Let's play</p>
+
+        <!-- retrieve guildName from discord api, with size placeholder -->
+        <div id="guildName"><p class="text-5xl tracking-wider font-bold mb-12">&#10240;</p></div>
+
+        <div class="rounded overflow-hidden w-full sm:w-4/5 md:w-3/4 mx-auto mb-6">
+            <div class="px-6 py-4">
+              <div class="text-sm font-thin -mb-3">
+                <span class="inline-block bg-gray-700 rounded-full px-3 py-1 text-sm font-thin uppercase text-gray-100 mr-2">Play Now</span>
+              </div>
+
+              <!-- retrieve serverIP from discord api, with loading placeholder -->
+              <p class="text-gray-100 text-base bg-gray-900 rounded py-6 px-3 sm:text-xl md:text-2xl font-mono overflow-hidden" id="serverIP">
+                Loading...
+              </p>
+
+            </div>
+        </div>
+
+        <!-- add toggle on mobile that opens discord crate -->
+        <div class="lg:hidden">
+            <button class="w-3/5 md:w-2/5 mb-16 bg-gray-700 border border-gray-700 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded-full shadow-lg" onclick="crate.setOptions({channel: '702040384716668979'}); crate.toggle(true);">
+                About Us
+            </button>
+        </div>
+
+        <!-- smaller screens open links normally -->
+        <div class="lg:hidden">
+            <a href="https://discord.gg/qkG7zAr" target="_blank" rel="noopener">
+                <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded">
+                    <i data-feather="message-square" class="inline mr-5"></i>Join our Discord
+                </button>
+            </a><br>
+            <a href="http://54.39.95.102:8888/index.html?worldname=CastleCore" target="_blank" rel="noopener">
+                <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded">
+                    <i data-feather="map" class="inline mr-5"></i>See Server Map
+                </button>
+            </a><br>
+            <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded" onclick="crate.setOptions({channel: '702047724903596032'}); crate.toggle(true);">
+                <i data-feather="image" class="inline mr-5"></i>See Screenshots
+            </button><br>
+            <a href="https://discord.gg/qkG7zAr" target="_blank" rel="noopener">
+                <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded">
+                    <i data-feather="credit-card" class="inline mr-5"></i>Donate to us
+                </button>
+            </a>
+        </div>
+
+        <!-- larger screens version use vuejs to toggle second column -->
+        <div class="hidden lg:block">
+            <a href="https://discord.gg/qkG7zAr" target="_blank" rel="noopener">
+                <button class="w-4/5 md:w-2/4 mt-6 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded">
+                    <i data-feather="message-square" class="inline mr-5"></i>Join our Discord
+                </button>
+            </a><br>
+            <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded" v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">
+                <i data-feather="map" class="inline mr-5"></i>See Server Map
+            </button><br>
+            <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded" v-on:click="activetab=3" v-bind:class="[ activetab === 3 ? 'active' : '' ]">
+                <i data-feather="image" class="inline mr-5"></i>See Screenshots
+            </button><br>
+            <a href="https://discord.gg/qkG7zAr" target="_blank" rel="noopener">
+                <button class="w-4/5 md:w-2/4 mb-2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold hover:text-gray py-3 px-4 border border-transparent hover:border-gray-400 text-lg rounded">
+                    <i data-feather="credit-card" class="inline mr-5"></i>Donate to us
+                </button>
+            </a>
+        </div>
+
+        <div class="pt-16"></div>
+    </div>
+
+    <!-- show second column on larger screens only -->
+    <div class="hidden lg:block w-1/2 content">
+        <div v-if="activetab === 1" class="tabcontent">
+            <div class="w-11/12 float-right">
+                <div class="rounded overflow-hidden">
+                    <iframe src="https://e.widgetbot.io/channels/699929877071003668/702040384716668979" style="width:100%;height:100vh;"></iframe>
+                </div>
+            </div>
+        </div>
+        <div v-if="activetab === 2" class="tabcontent">
+            <div class="rounded overflow-hidden">
+                <iframe src="http://54.39.95.102:8888/index.html?worldname=CastleCore" style="width:100%;height:100vh;"></iframe>
+            </div>
+        </div>
+        <div v-if="activetab === 3" class="tabcontent">
+            <div class="rounded overflow-hidden">
+                <iframe src="https://e.widgetbot.io/channels/699929877071003668/702047724903596032" style="width:100%;height:100vh;"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+
+<!-- fetch discord api for server name -->
+<script>
+fetch('https://discordapp.com/api/guilds/699929877071003668', {
+    headers: {
+        'Authorization': 'Bot NzA0MDk3MTAyMzAwNzA5MDA1.XqZmmA.ESHrIr5NHnopKTuBsPFF2HYYtV4'
+    }
+})
+.then(response => {
+    return response.json()
+})
+.then(data => {
+    document.getElementById('siteTitle').innerHTML = `<title>Let's Play ${data.name}</title><meta property="og:title" content="Let's Play ${data.name}" />`
+    document.getElementById('guildName').innerHTML = `<p class="slide-in-blurred-bottom text-6xl tracking-wider font-bold mb-6" style="font-family:Aladin">${data.name}</p>`
+})
+</script>
+
+<!-- fetch discord api for server IP -->
+<script>
+fetch('https://discordapp.com/api/channels/704103770811793440', {
+    headers: {
+        'Authorization': 'Bot NzA0MDk3MTAyMzAwNzA5MDA1.XqZmmA.ESHrIr5NHnopKTuBsPFF2HYYtV4'
+    }
+})
+.then(response => {
+    return response.json()
+})
+.then(data => {
+    document.getElementById('serverIP').innerHTML = data.name
+})
+</script>
+
+<!-- set website canonical -->
+<script>
+new Vue({
+    el: '#webURL',
+    data: {
+        wogurl: `<meta property="og:url" content="${window.location.href}" />`,
+        wogimage: `<meta property="og:image" content="${window.location.href}media/logo-rd-sm.png" />`,
+    },
+});
+</script>
+
+<!-- og tags for media embeds -->
+<div id="siteTitle"></div>
+<div id="webURL">
+    <div v-html="wogurl"></div>
+    <div v-html="wogimage"></div>
+</div>
+<meta property="og:description" content="A Minecraft RPG server where we are creating an entire country to be explored from scratch." />
+<meta property="og:type" content="website" />
+
+
+<!-- feather icons -->
+<script>
+    feather.replace()
+</script>
+
+<!-- larger screens - view switcher -->
+<script>
+new Vue({
+    el: '#tabs',
+    data: { activetab: 1 },
+});
+</script>
+
+<!-- smaller screens - widgetbot -->
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    if (window.innerWidth < 1024){
+        new Crate({
+        server: '699929877071003668',
+        channel: '702040384716668979',
+        shard: 'https://e.widgetbot.io'
+        })
+    } else {};
+</script>
+
+</body>
+</html>
