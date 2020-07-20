@@ -5,7 +5,7 @@ navname: Home
 # Cells at the bottom of the page
 cellLinks:
   - cname: Server Map
-    curl: http://wyscraft.net/8888
+    curl: http://wyscraft.net:8888/#
     cimage: media/dynmap01.jpg
 
   - cname: Screenshots
