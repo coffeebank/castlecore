@@ -13,6 +13,7 @@ showinSearchEngines: true
 serverName: Wyscraft
 serverDescription: Wyscraft is an RPG-flavored survival server! Battle custom monsters, collect rare equipment, and trade with other players! Build your base and make towns with your friends. We use a resource pack to bring custom magical items for players to enjoy, so come along and chill with us on Wyscraft now!
 serverIP: play.wyscraft.net
+serverPortBedrock: 19132
 
 
 # Discord information

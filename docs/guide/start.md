@@ -37,7 +37,7 @@ navname: Getting Started
 1. Click "Add Server"
     - Server Name: **{{ site.serverName }}**
     - Server Address: **{{ site.serverIP }}**
-    - Port: Leave as is
+    - Port: {% if site.serverPortBedrock %}**{{ site.serverPortBedrock }}**{% else %}Leave as is{% endif %}
 1. Click "Play"
 
 ## How to Play Minecraft
