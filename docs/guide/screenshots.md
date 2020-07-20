@@ -10,4 +10,4 @@ discordShowcaseChannelID: 702047724903596032
 
 # Screenshots
 
-[Join our Discord](../../) to discuss and share screenshots!
+[Join our Discord](../../){:.button} to discuss and share screenshots!

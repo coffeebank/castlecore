@@ -12,7 +12,7 @@ cellLinks:
     curl: guide/screenshots
     cimage: media/2020-04-21_15_min.jpg
 
-  - cname: Donate
-    curl: 
-    cimage: media/micheile-henderson-ZVprbBmT8QA-unsplash_c02.jpg
+  - cname: How do I Play?
+    curl: guide/start
+    cimage: media/bernin-uben-OTzISrtVmVc-unsplash_c02.jpg
 ---
