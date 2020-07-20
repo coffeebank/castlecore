@@ -57,7 +57,7 @@ layout: compress
                         Home
                     </a>
                     {% for nlink in site.siteNav %}
-                        <a href="{{ site.baseurl }}/{{ nlink.nurl }}" rel="noopener" class="block inline-block {% if page.navname == nlink.nname %}text-white{% else %}text-teal-200 hover:text-white{% endif %} mr-4">
+                        <a href="{{ site.baseurl }}/{{ nlink.nurl }}" rel="noopener" {% if nlink.nnewtab == true %}target="_blank" {% endif %}class="block inline-block {% if page.navname == nlink.nname %}text-white{% else %}text-teal-200 hover:text-white{% endif %} mr-4">
                             {{ nlink.nname }}
                         </a>
                     {% endfor %}

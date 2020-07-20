@@ -29,6 +29,7 @@ siteNav:
     nurl: guide
   - nname: Items
     nurl: items
+    nnewtab: true
   - nname: About
     nurl: about
 
