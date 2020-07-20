@@ -27,6 +27,8 @@ discordChannelID: 702040384716668979
 siteNav:
   - nname: Player Guide
     nurl: guide
+  - nname: Items
+    nurl: items
   - nname: About
     nurl: about
 
