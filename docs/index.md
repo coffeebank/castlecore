@@ -9,7 +9,7 @@ cellLinks:
     cimage: media/dynmap01.jpg
 
   - cname: Screenshots
-    curl: 
+    curl: guide/screenshots
     cimage: media/2020-04-21_15_min.jpg
 
   - cname: Donate

@@ -91,8 +91,10 @@ layout: compress
 
     {{ content }}
 
-    <div class="w-full pb-8 text-center">
+    <div class="w-full pb-8 text-center" style="color:#888;">
         <a href="{% if site.siteFooterlink %}{{ site.siteFooterlink }}{% elsif site.siteURL %}{{ site.siteURL }}{% else %}https://github.com/coffeebank/moonrise{% endif %}" rel="noopener" style="color:#888;" title="Legal">&copy; {{ site.siteYear }}<script>new Date().getFullYear()>{{ site.siteYear }}&&document.write("&#8208;"+new Date().getFullYear());</script> {{ site.serverName }}</a>
+        <span>&#x30fb;</span>
+        <a href="{{ site.baseurl }}/about">Contact Us</a>
     </div>
 
     {% if page.navname == "Home" %}
