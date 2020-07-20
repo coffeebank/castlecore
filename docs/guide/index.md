@@ -3,6 +3,11 @@ layout: page
 navname: Player Guide
 ---
 
+# Getting Started
+
+[Screenshots](screenshots){:.button} [How do I Play?](start){:.button}
+
+
 # User Ranks
 
 Put some links here!
