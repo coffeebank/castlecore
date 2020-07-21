@@ -8,8 +8,8 @@ cellLinks:
     curl: http://play.wyscraft.net:8888/
     cimage: media/dynmap01.jpg
 
-  - cname: Screenshots
-    curl: guide/screenshots
+  - cname: Donate
+    curl: 
     cimage: media/2020-04-21_15_min.jpg
 
   - cname: How do I Play?

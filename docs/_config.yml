@@ -30,6 +30,9 @@ siteNav:
   - nname: Items
     nurl: items
     nnewtab: true
+  - nname: Map
+    nurl: map
+    nnewtab: true
 
 
 # Build settings
