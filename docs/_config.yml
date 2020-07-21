@@ -30,8 +30,6 @@ siteNav:
   - nname: Items
     nurl: items
     nnewtab: true
-  - nname: About
-    nurl: about
 
 
 # Build settings
