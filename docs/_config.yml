@@ -25,6 +25,8 @@ discordChannelID: 702040384716668979
 # Navbar Links at the top of the page
 # Uncomment this section to add page functionality!
 siteNav:
+  - nname: Vote
+    nurl: vote
   - nname: Player Guide
     nurl: guide
   - nname: Items
