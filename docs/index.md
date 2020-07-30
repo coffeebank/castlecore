@@ -5,12 +5,14 @@ navname: Home
 # Cells at the bottom of the page
 cellLinks:
   - cname: Server Map
-    curl: http://play.wyscraft.net:8888/
+    curl: map
     cimage: media/dynmap01.jpg
+    cnewtab: true
 
-  - cname: Donate
-    curl: 
+  - cname: Donate to Patreon
+    curl: donate
     cimage: media/2020-04-21_15_min.jpg
+    cnewtab: true
 
   - cname: How do I Play?
     curl: guide/start
