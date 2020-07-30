@@ -27,13 +27,11 @@ discordChannelID: 699930783879790634
 siteNav:
   - nname: Vote
     nurl: vote
-  - nname: Player Guide
-    nurl: guide
-  - nname: Items
-    nurl: items
-    nnewtab: true
   - nname: Map
     nurl: map
+    nnewtab: true
+  - nname: Donate
+    nurl: donate
     nnewtab: true
 
 

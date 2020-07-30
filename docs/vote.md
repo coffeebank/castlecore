@@ -17,10 +17,14 @@ voteLinks:
 
 ---
 
+![Wyscraft server banner](/media/banner.png){:.mt-8}
+
 # Voting Sites
+{:.pt-4}
+
 Please vote for Wyscraft to help support us and get an in-game reward!
 
-<div id="voteLinks" class="flex flex-wrap items-start content-start py-4">
+<div id="voteLinks" class="flex flex-wrap items-start content-start pt-4 pb-8">
 {% for vlink in page.voteLinks %}
 <div class="w-full sm:w-auto mb-2 mr-1">
 <a href="{{ vlink.url }}" target="_blank" rel="noopener" class="button">{{ vlink.name }}</a>
