@@ -27,7 +27,9 @@ Please vote for Wyscraft to help support us and get an in-game reward!
 <div id="voteLinks" class="flex flex-wrap items-start content-start pt-4 pb-8">
 {% for vlink in page.voteLinks %}
 <div class="w-full sm:w-auto mb-2 mr-1">
-<a href="{{ vlink.url }}" target="_blank" rel="noopener" class="button">{{ vlink.name }}</a>
+<a href="{{ vlink.url }}" target="_blank" rel="noopener">
+<div class="button w-full sm:w-auto text-center sm:text-left" style="line-height:1.5"><span>{{ vlink.name }}</span></div>
+</a>
 </div>
 {% endfor %}
 </div>
