@@ -16,7 +16,7 @@ voteLinks:
     url: https://minecraftservers.org/server/591327
 
   - name: PlanetMinecraft
-    url: https://www.planetminecraft.com/server/wyscraft-a-unique-survival-experience-with-a-rpg-twist-based-on-rare-artifacts-and-economy/vote/
+    url: https://www.planetminecraft.com/server/wyscraft-dungeons-custom-items-mobs-economy-survival/vote/
 
 ---
 
