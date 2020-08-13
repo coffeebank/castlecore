@@ -3,6 +3,9 @@ layout: page
 navname: Vote
 
 voteLinks:
+  - name: MinecraftMP
+    url: https://minecraft-mp.com/server/265546/vote/
+    
   - name: MCServerTime
     url: https://mcservertime.com/server-wyscraft.87/vote
 
@@ -13,7 +16,7 @@ voteLinks:
     url: https://minecraftservers.org/server/591327
 
   - name: PlanetMinecraft
-    url: https://tinyurl.com/wysccvote4
+    url: https://www.planetminecraft.com/server/wyscraft-dungeons-custom-items-mobs-economy-survival/vote/
 
 ---
 
