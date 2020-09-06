@@ -29,7 +29,7 @@ voteLinks:
 {:.pt-4}
 
 Please vote for Wyscraft to help support us and get an in-game reward!
-Warning: MinecraftPEServers does not issue a reward.
+MinecraftPEServers does not issue a reward.
 
 <div id="voteLinks" class="flex flex-wrap items-start content-start pt-4 pb-8">
 {% for vlink in page.voteLinks %}
