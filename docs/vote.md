@@ -17,6 +17,9 @@ voteLinks:
 
   - name: PlanetMinecraft
     url: https://www.planetminecraft.com/server/wyscraft-dungeons-custom-items-mobs-economy-survival/vote/
+    
+  - name: MinecraftPEServers
+    url: https://minecraftpocket-servers.com/server/103033/vote/
 
 ---
 
@@ -26,6 +29,7 @@ voteLinks:
 {:.pt-4}
 
 Please vote for Wyscraft to help support us and get an in-game reward!
+Warning: MinecraftPEServers does not issue a reward.
 
 <div id="voteLinks" class="flex flex-wrap items-start content-start pt-4 pb-8">
 {% for vlink in page.voteLinks %}
