@@ -1,4 +1,4 @@
 ---
 layout: redirect
-tourl: https://patreon.com/wyscraft
+tourl: http://store.wyscraft.net/
 ---
